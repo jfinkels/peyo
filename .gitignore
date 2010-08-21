@@ -1,0 +1,16 @@
+# ignore eclipse-specific files
+.checkstyle
+.classpath
+.project
+.settings/org.eclipse.jdt.core.prefs
+.settings/org.eclipse.jdt.ui.prefs
+
+# ignore the build output directory
+target
+
+# ignore buildr reports directory
+reports
+
+# ignore temporary files
+\#*
+*~

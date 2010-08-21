@@ -1,0 +1,25 @@
+peyo is a program which evolves protein chains which match a given hidden
+Markov model.
+
+This software is released under the GPLv3; see COPYING for more information.
+
+See "http://wiki.github.com/jfinkels/peyo" for more information on using this 
+project. For the impatient, read on.
+
+To build this package as a JAR, run
+
+  mvn package
+
+To prepare this package for development in Eclipse (if you wish to do so), run
+
+  mvn eclipse:eclipse -DdownloadSources=true -DdownloadJavadocs=true
+
+and
+
+  mvn eclipse:configure-workspace -Declipse.workspace=/path/to/workspace
+
+Eclipse automatic source formatting rules can be found in "formatter.xml" in
+the top-level directory of this project.
+
+Checkstyle rules can be found in "checkstyle.xml" in the top-level directory of
+this project.
