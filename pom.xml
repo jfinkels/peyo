@@ -452,6 +452,17 @@
 
   <repositories>
     <repository>
+      <id>jmona.repo</id>
+      <name>jmona repository</name>
+      <url>http://www.cs.tufts.edu/~jfinke02/repo</url>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+    </repository>
+    <repository>
       <id>biojava.repo</id>
       <name>BioJava Maven repository</name>
       <url>http://biojava.org/download/maven</url>
@@ -461,7 +472,6 @@
       <snapshots>
         <enabled>true</enabled>
       </snapshots>
-      <layout></layout>
     </repository>
   </repositories>
 
