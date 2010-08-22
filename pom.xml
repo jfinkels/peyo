@@ -18,6 +18,22 @@
       <type>jar</type>
     </dependency>
 
+    <dependency>
+      <groupId>jmona</groupId>
+      <artifactId>jmona</artifactId>
+      <version>${version.dependency.jmona}</version>
+      <scope>compile</scope>
+      <type>jar</type>
+    </dependency>
+
+    <dependency>
+      <groupId>org.biojava</groupId>
+      <artifactId>core</artifactId>
+      <version>${version.dependency.biojava}</version>
+      <scope>compile</scope>
+      <type>jar</type>
+    </dependency>
+
     <!-- TEST-COMPILE DEPENDENCIES -->
     <dependency> <!-- JUnit 4 unit testing framework -->
       <groupId>junit</groupId>
@@ -39,6 +55,8 @@
 
   <properties>
     <!-- dependency versions -->
+    <version.dependency.biojava>3.0-SNAPSHOT</version.dependency.biojava>
+    <version.dependency.jmona>0.5-SNAPSHOT</version.dependency.jmona>
     <version.dependency.junit>4.8.1</version.dependency.junit>
     <version.dependency.log4j>1.2.14</version.dependency.log4j>
     <version.dependency.spring>3.0.4.RELEASE</version.dependency.spring>
@@ -431,7 +449,22 @@
     <connection>scm:git:git://github.com/jfinkels/peyo.git</connection>
     <url>http://github.com/jfinkels/peyo</url>
   </scm>
-    
+
+  <repositories>
+    <repository>
+      <id>biojava.repo</id>
+      <name>BioJava Maven repository</name>
+      <url>http://biojava.org/download/maven</url>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+      <layout></layout>
+    </repository>
+  </repositories>
+
   <distributionManagement>
     <downloadUrl>http://www.cs.tufts.edu/~jfinke02/peyo/</downloadUrl>
     <repository>
