@@ -1,0 +1,47 @@
+<!--
+ ProteinEvolutionTest-context.xml
+
+ Copyright 2010 Jeffrey Finkelstein
+ 
+ This file is part of peyo.
+ 
+ peyo is free software: you can redistribute it and/or modify it under the
+ terms of the GNU General Public License as published by the Free Software
+ Foundation, either version 3 of the License, or (at your option) any later
+ version.
+ 
+ peyo is distributed in the hope that it will be useful, but WITHOUT ANY
+ WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+ A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+ 
+ You should have received a copy of the GNU General Public License along with
+ peyo. If not, see <http://www.gnu.org/licenses/>.
+-->
+<beans
+    xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+                        http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+  <import resource="./factories.xml" />
+  <import resource="./functions.xml" />
+  
+  <bean id="population" 
+    factory-bean="populationFactory" 
+    factory-method="createObject" />
+
+  <bean id="completionCondition" class="jmona.impl.completion.MaxGenerationCompletionCondition" >
+    <property name="maxGenerations" value="3" />
+  </bean>
+  
+  <bean id="evolutionContext" class="jmona.ga.impl.GAEvolutionContext">
+    <constructor-arg>
+      <ref bean="population" />
+    </constructor-arg>
+    <property name="fitnessFunction" ref="fitnessFunction" />
+    <property name="crossoverFunction" ref="crossoverFunction" />
+    <property name="mutationFunction" ref="mutationFunction" />
+    <property name="selectionFunction" ref="selectionFunction" />
+  </bean>
+
+</beans>

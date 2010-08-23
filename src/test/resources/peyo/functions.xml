@@ -1,0 +1,46 @@
+<!--
+ functions.xml
+
+ Copyright 2010 Jeffrey Finkelstein
+ 
+ This file is part of peyo.
+ 
+ peyo is free software: you can redistribute it and/or modify it under the
+ terms of the GNU General Public License as published by the Free Software
+ Foundation, either version 3 of the License, or (at your option) any later
+ version.
+ 
+ peyo is distributed in the hope that it will be useful, but WITHOUT ANY
+ WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+ A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+ 
+ You should have received a copy of the GNU General Public License along with
+ peyo. If not, see <http://www.gnu.org/licenses/>.
+-->
+<beans
+    xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+                        http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+  <import resource="profile.xml" />
+
+  <bean id="crossoverFunction" class="jmona.ga.impl.TwoPointCrossoverFunction" />
+  <bean id="fitnessFunction" class="peyo.ProteinFitnessFunction">
+    <constructor-arg value="1000000" />
+    <property name="hiddenMarkovModel" ref="profile" />
+  </bean>
+  
+  <bean id="residueMutationFunction" class="peyo.ResidueMutationFunction" />
+  
+  <bean id="mutationFunction"
+    class="jmona.impl.mutation.VariableDistributionMutationFunction">
+    <property name="distribution">
+      <bean factory-bean="distributionFactory"
+        factory-method="createObject" />
+    </property>
+    <property name="elementMutationFunction" ref="residueMutationFunction" />
+  </bean>
+  <bean id="selectionFunction" class="jmona.impl.selection.FitnessProportionateSelection" />
+
+</beans>
