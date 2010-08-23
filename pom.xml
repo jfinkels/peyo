@@ -25,10 +25,18 @@
       <scope>compile</scope>
       <type>jar</type>
     </dependency>
+    
+    <!-- <dependency>
+      <groupId>be.ac.ulg.montefiore.run.jahmm</groupId>
+      <artifactId>jahmm</artifactId>
+      <version>${version.dependency.jahmm}</version>
+      <scope>compile</scope>
+      <type>jar</type>
+    </dependency> -->
 
     <dependency>
       <groupId>org.biojava</groupId>
-      <artifactId>core</artifactId>
+      <artifactId>biojava</artifactId>
       <version>${version.dependency.biojava}</version>
       <scope>compile</scope>
       <type>jar</type>
@@ -63,7 +71,8 @@
 
   <properties>
     <!-- dependency versions -->
-    <version.dependency.biojava>3.0-SNAPSHOT</version.dependency.biojava>
+    <version.dependency.biojava>1.7.1</version.dependency.biojava>
+    <!-- <version.dependency.jahmm>0.6.2</version.dependency.jahmm> -->
     <version.dependency.jmona>0.5-SNAPSHOT</version.dependency.jmona>
     <version.dependency.junit>4.8.1</version.dependency.junit>
     <version.dependency.lang>3.0-SNAPSHOT</version.dependency.lang>
@@ -460,21 +469,32 @@
   </scm>
 
   <repositories>
-    <repository>
-      <id>jmona.repo</id>
-      <name>jmona repository</name>
-      <url>http://www.cs.tufts.edu/~jfinke02/repo</url>
+    <!--  <repository>
+      <id>biojava.repo</id>
+      <name>BioJava Maven repository</name>
+      <url>http://biojava.org/download/maven</url>
       <releases>
         <enabled>true</enabled>
       </releases>
       <snapshots>
-        <enabled>true</enabled>
+        <enabled>false</enabled>
       </snapshots>
-    </repository>
+    </repository> -->
+    <!-- <repository>
+      <id>jahmm.repo</id>
+      <name>Jahmm HMM library repository</name>
+      <url>http://jahmm.googlecode.com/svn/repo</url>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+    </repository> -->
     <repository>
-      <id>biojava.repo</id>
-      <name>BioJava Maven repository</name>
-      <url>http://biojava.org/download/maven</url>
+      <id>jmona.repo</id>
+      <name>jmona repository</name>
+      <url>http://www.cs.tufts.edu/~jfinke02/repo</url>
       <releases>
         <enabled>true</enabled>
       </releases>
