@@ -82,13 +82,15 @@ public class Hmmer2Parser {
     String line = reader.readLine();
 
     while (line != null) {
-      LOG.debug("current line: " + line);
+      LOG.debug("  current line: " + line);
       if (line.startsWith("LENG")) {
         result.setLength(Integer.parseInt(line.substring(4).trim()));
       }
-      
+
       line = reader.readLine();
     }
+
+    reader.close();
 
     return result;
   }
